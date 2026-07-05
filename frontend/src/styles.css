@@ -110,9 +110,61 @@ nav .wrap {
     color: var(--accent);
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 100;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+}
+
 @media (max-width: 640px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
     .nav-links {
         display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(12, 12, 13, 0.96);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        gap: 24px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+        z-index: 99;
+    }
+    
+    .nav-links.is-active {
+        display: flex;
+    }
+    
+    .nav-toggle.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
 }
 
@@ -794,6 +846,33 @@ footer {
     background: var(--bg-panel);
 }
 
+.event-slider-row {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+}
+
+.event-slider-row:first-of-type {
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-panel);
+}
+
+.event-slider-row:last-of-type {
+    border-radius: 0 0 8px 8px;
+    border: 1px solid var(--line);
+    border-top: none;
+    background: var(--bg-panel);
+}
+
+.event-slider-row:nth-child(3) {
+    border-left: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    background: var(--bg-panel);
+}
+
 .event-track {
     display: flex;
     width: max-content;
@@ -803,14 +882,32 @@ footer {
     will-change: transform;
 }
 
+.event-track-ltr {
+    animation: event-drift-ltr 40s linear infinite;
+}
+
+.event-track-rtl {
+    animation: event-drift-rtl 44s linear infinite;
+}
+
 @keyframes event-drift {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes event-drift-ltr {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes event-drift-rtl {
     from { transform: translateX(-50%); }
     to { transform: translateX(0); }
 }
 
 .event-slide {
     position: relative;
-    flex: 0 0 clamp(240px, 32vw, 420px);
+    flex: 0 0 clamp(180px, 22vw, 300px);
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: 8px;
@@ -848,6 +945,53 @@ footer {
     font-size: 20px;
     line-height: .95;
     max-width: 18ch;
+}
+
+/* ── Home page work reel (single-line) ── */
+
+.work-reel {
+    overflow: hidden;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.work-reel-track {
+    display: flex;
+    width: max-content;
+    gap: 14px;
+    animation: work-reel-drift 60s linear infinite;
+    will-change: transform;
+}
+
+.work-reel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes work-reel-drift {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.work-reel-slide {
+    flex: 0 0 clamp(200px, 24vw, 340px);
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+    background: #101012;
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.work-reel-slide:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.work-reel-slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
 
 .filter-bar {
@@ -1122,5 +1266,59 @@ footer {
     background-image: linear-gradient(to top, rgba(12, 12, 13, .72), rgba(12, 12, 13, .12)), url('images/maru/brand1.webp');
     background-size: cover;
     background-position: center;
+}
+
+.project-preview-brand-moconi {
+    background-image: linear-gradient(to top, rgba(12, 12, 13, .72), rgba(12, 12, 13, .12)), url('images/moconi/brand2.0.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.project-preview-home {
+    background: linear-gradient(135deg, #1c1c1f 0%, var(--accent) 150%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-preview-home::after {
+    content: "HOME";
+    position: absolute;
+    font-family: var(--display);
+    font-size: clamp(24px, 4vw, 36px);
+    color: var(--ink);
+    opacity: 0.12;
+    letter-spacing: 0.15em;
+    transform: rotate(-12deg);
+    font-weight: 800;
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: clamp(40px, 12vw, 60px);
+        letter-spacing: -0.02em;
+    }
+    
+    .projects-title {
+        font-size: clamp(36px, 10vw, 50px);
+    }
+    
+    .case-title {
+        font-size: clamp(36px, 10vw, 50px);
+    }
+    
+    .hello-copy h2 {
+        font-size: clamp(32px, 8vw, 44px);
+    }
+    
+    .foot-title {
+        font-size: clamp(30px, 8vw, 40px);
+    }
+    
+    .section-head h2 {
+        font-size: clamp(28px, 6vw, 36px);
+    }
 }
 

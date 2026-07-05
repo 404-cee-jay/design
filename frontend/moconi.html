@@ -16,7 +16,11 @@
 <nav>
     <div class="wrap">
         <div class="brand-mark">KELVIN</div>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="index.html#hello">About</a>
             <a href="projects.html">Projects</a>
             <a href="index.html#contact">Contact</a>
@@ -63,14 +67,11 @@
         <div class="wrap">
             <div class="section-head">
                 <h2>Visual Direction<span class="accent-dot">.</span></h2>
-                <p>The Moconi folder images show the identity applied in a few different compositions.</p>
+                <p>The Moconi brand showcase highlights the complete visual identity in a single composition.</p>
             </div>
             <div class="case-gallery">
                 <figure class="case-figure case-figure-large">
-                    <img src="src/images/moconi/brand2.0.webp" alt="Moconi brand identity key visual">
-                </figure>
-                <figure class="case-figure">
-                    <img src="src/images/moconi/brand2.1.webp" alt="Moconi brand identity variation">
+                    <img src="src/images/moconi/brand2.0.webp" alt="Moconi brand identity showcase">
                 </figure>
             </div>
         </div>
@@ -117,5 +118,33 @@
     </div>
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        
+        if (toggle && links) {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggle.classList.toggle('is-active');
+                links.classList.toggle('is-active');
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!toggle.contains(e.target) && !links.contains(e.target)) {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                }
+            });
+            
+            links.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                });
+            });
+        }
+    });
+</script>
 </body>
 </html>

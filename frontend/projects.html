@@ -16,7 +16,11 @@
 <nav>
     <div class="wrap">
         <div class="brand-mark">KELVIN</div>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="index.html#hello">About</a>
             <a href="projects.html">Projects</a>
             <a href="index.html#contact">Contact</a>
@@ -47,60 +51,69 @@
                     <span class="case-label">Event posters</span>
                     <h2>Event Reel<span class="accent-dot">.</span></h2>
                 </div>
-                <p>When the event filter is active, the posters glide from left to right with short on-card wording.</p>
+                <p>All event and corporate poster work — three rows scrolling in alternating directions, on infinite repeat.</p>
             </div>
 
-            <div class="event-slider">
-                <div class="event-track">
-                    <article class="event-slide">
-                        <img src="src/images/corporate/1.webp" alt="Event poster one">
-                        <div class="event-copy"><span>01</span><strong>Launch night energy.</strong></div>
-                    </article>
-                    <article class="event-slide">
-                        <img src="src/images/corporate/2.webp" alt="Event poster two">
-                        <div class="event-copy"><span>02</span><strong>Built to pull attention fast.</strong></div>
-                    </article>
-                    <article class="event-slide">
-                        <img src="src/images/corporate/3.webp" alt="Event poster three">
-                        <div class="event-copy"><span>03</span><strong>Bold poster moments.</strong></div>
-                    </article>
-                    <article class="event-slide">
-                        <img src="src/images/corporate/4.webp" alt="Event poster four">
-                        <div class="event-copy"><span>04</span><strong>Clean, loud, and memorable.</strong></div>
-                    </article>
-                    <article class="event-slide">
-                        <img src="src/images/corporate/5.webp" alt="Event poster five">
-                        <div class="event-copy"><span>05</span><strong>Energy for the feed and wall.</strong></div>
-                    </article>
-                    <article class="event-slide">
-                        <img src="src/images/corporate/6.webp" alt="Event poster six">
-                        <div class="event-copy"><span>06</span><strong>Simple wording, strong presence.</strong></div>
-                    </article>
+            <!-- Row 1: Left to Right -->
+            <div class="event-slider event-slider-row">
+                <div class="event-track event-track-ltr">
+                    <article class="event-slide"><img src="src/images/corporate/1.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/2.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/3.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ee1.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ee2.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ww.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/yy7.jpg" alt="Event poster"></article>
+                    <!-- Duplicate set for seamless loop -->
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/1.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/2.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/3.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ee1.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ee2.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ww.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/yy7.jpg" alt=""></article>
+                </div>
+            </div>
 
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/1.webp" alt="">
-                        <div class="event-copy"><span>01</span><strong>Launch night energy.</strong></div>
-                    </article>
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/2.webp" alt="">
-                        <div class="event-copy"><span>02</span><strong>Built to pull attention fast.</strong></div>
-                    </article>
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/3.webp" alt="">
-                        <div class="event-copy"><span>03</span><strong>Bold poster moments.</strong></div>
-                    </article>
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/4.webp" alt="">
-                        <div class="event-copy"><span>04</span><strong>Clean, loud, and memorable.</strong></div>
-                    </article>
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/5.webp" alt="">
-                        <div class="event-copy"><span>05</span><strong>Energy for the feed and wall.</strong></div>
-                    </article>
-                    <article class="event-slide" aria-hidden="true">
-                        <img src="src/images/corporate/6.webp" alt="">
-                        <div class="event-copy"><span>06</span><strong>Simple wording, strong presence.</strong></div>
-                    </article>
+            <!-- Row 2: Right to Left -->
+            <div class="event-slider event-slider-row">
+                <div class="event-track event-track-rtl">
+                    <article class="event-slide"><img src="src/images/corporate/4.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/5.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/6.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ee4.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ee6.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ww3.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/yy8.jpg" alt="Event poster"></article>
+                    <!-- Duplicate set for seamless loop -->
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/4.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/5.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/6.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ee4.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ee6.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ww3.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/yy8.jpg" alt=""></article>
+                </div>
+            </div>
+
+            <!-- Row 3: Left to Right -->
+            <div class="event-slider event-slider-row">
+                <div class="event-track event-track-ltr">
+                    <article class="event-slide"><img src="src/images/corporate/ee7.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/iuu.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/tt6.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/ww4.jpg" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/_ (1).webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/Monday Motivation Business Post Design _ Social Media _ Weekly Motivation Graphic.webp" alt="Event poster"></article>
+                    <article class="event-slide"><img src="src/images/corporate/Some social media creatives for @petrahouseandover __#churchcreatives #creativedesigns #banner #marketingcompaign #marketing #graphicdesign #design #flyer #posterdesign.jpeg" alt="Event poster"></article>
+                    <!-- Duplicate set for seamless loop -->
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ee7.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/iuu.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/tt6.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/ww4.jpg" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/_ (1).webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/Monday Motivation Business Post Design _ Social Media _ Weekly Motivation Graphic.webp" alt=""></article>
+                    <article class="event-slide" aria-hidden="true"><img src="src/images/corporate/Some social media creatives for @petrahouseandover __#churchcreatives #creativedesigns #banner #marketingcompaign #marketing #graphicdesign #design #flyer #posterdesign.jpeg" alt=""></article>
                 </div>
             </div>
         </section>
@@ -121,6 +134,15 @@
                 <div class="project-copy">
                     <h2>Moconi</h2>
                     <p>Brand identity direction built from the Moconi visual assets.</p>
+                </div>
+            </a>
+
+            <a class="project-card project-link" href="index.html" data-category="brand" aria-label="Back to home page">
+                <div class="project-badge">Navigation</div>
+                <div class="project-preview project-preview-home"></div>
+                <div class="project-copy">
+                    <h2>Home</h2>
+                    <p>Return to the homepage to see selected work, profile information, and get in touch.</p>
                 </div>
             </a>
         </section>
@@ -148,6 +170,34 @@
 </footer>
 
 <script>
+    // Navigation toggle logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        
+        if (toggle && links) {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggle.classList.toggle('is-active');
+                links.classList.toggle('is-active');
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!toggle.contains(e.target) && !links.contains(e.target)) {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                }
+            });
+            
+            links.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                });
+            });
+        }
+    });
+
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     const eventShowcase = document.querySelector('.event-showcase');

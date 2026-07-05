@@ -16,7 +16,11 @@
 <nav>
     <div class="wrap">
         <div class="brand-mark">KELVIN</div>
+        <button class="nav-toggle" type="button" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
         <div class="nav-links">
+            <a href="index.html">Home</a>
             <a href="index.html#hello">About</a>
             <a href="projects.html">Projects</a>
             <a href="index.html#contact">Contact</a>
@@ -126,5 +130,33 @@
     </div>
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        
+        if (toggle && links) {
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggle.classList.toggle('is-active');
+                links.classList.toggle('is-active');
+            });
+            
+            document.addEventListener('click', (e) => {
+                if (!toggle.contains(e.target) && !links.contains(e.target)) {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                }
+            });
+            
+            links.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    toggle.classList.remove('is-active');
+                    links.classList.remove('is-active');
+                });
+            });
+        }
+    });
+</script>
 </body>
 </html>
